@@ -1,0 +1,117 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3f0ea94c/
+ALLSPHINXOPTS	docs/Makefile	/^ALLSPHINXOPTS   = -d $(BUILDDIR)\/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .$/;"	m
+BUILDDIR	docs/Makefile	/^BUILDDIR      = _build$/;"	m
+Changelog	CHANGES.rst	/^Changelog$/;"	c
+ComtradeApi	tradedownloader/getTradeDataFromComtrade.py	/^class ComtradeApi:$/;"	c
+Contents	docs/index.rst	/^Contents$/;"	c
+Developers	AUTHORS.rst	/^Developers$/;"	c
+Functioning	README.rst	/^Functioning$/;"	c
+I18NSPHINXOPTS	docs/Makefile	/^I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .$/;"	m
+Indices and tables	docs/index.rst	/^Indices and tables$/;"	c
+License	docs/license.rst	/^License$/;"	c
+Notes	README.rst	/^Notes$/;"	c
+PAPER	docs/Makefile	/^PAPER         =$/;"	m
+PAPEROPT_a4	docs/Makefile	/^PAPEROPT_a4     = -D latex_paper_size=a4$/;"	m
+PAPEROPT_letter	docs/Makefile	/^PAPEROPT_letter = -D latex_paper_size=letter$/;"	m
+Requirements	README.rst	/^Requirements$/;"	c
+SPHINXBUILD	docs/Makefile	/^SPHINXBUILD   = sphinx-build$/;"	m
+SPHINXOPTS	docs/Makefile	/^SPHINXOPTS    =$/;"	m
+TestUtilities	tests/test_utilities.py	/^class TestUtilities():$/;"	c
+Usage	README.rst	/^Usage$/;"	c
+Version 0.1	CHANGES.rst	/^Version 0.1$/;"	c
+__author__	tests/test_skeleton.py	/^__author__ = "Eoin O'Keeffe"$/;"	v
+__author__	tests/test_utilities.py	/^__author__ = "Eoin O'Keeffe"$/;"	v
+__author__	tradedownloader/skeleton.py	/^__author__ = "Eoin O'Keeffe"$/;"	v
+__copyright__	tests/test_skeleton.py	/^__copyright__ = "Eoin O'Keeffe"$/;"	v
+__copyright__	tests/test_utilities.py	/^__copyright__ = "Eoin O'Keeffe"$/;"	v
+__copyright__	tradedownloader/skeleton.py	/^__copyright__ = "Eoin O'Keeffe"$/;"	v
+__init__	tradedownloader/getTradeDataFromComtrade.py	/^    def __init__(self, ctry_codes_path="UN Comtrade Country List.csv", fld=""):$/;"	m	class:ComtradeApi
+__license__	tests/test_skeleton.py	/^__license__ = "none"$/;"	v
+__license__	tests/test_utilities.py	/^__license__ = "none"$/;"	v
+__license__	tradedownloader/skeleton.py	/^__license__ = "none"$/;"	v
+__location__	docs/conf.py	/^    __location__ = os.path.join(os.getcwd(), os.path.dirname($/;"	v
+_ctry_alt_names	tradedownloader/getTradeDataFromComtrade.py	/^    _ctry_alt_names = []$/;"	v	class:ComtradeApi
+_ctry_codes	tradedownloader/getTradeDataFromComtrade.py	/^    _ctry_codes = []$/;"	v	class:ComtradeApi
+_last_call_time	tradedownloader/getTradeDataFromComtrade.py	/^    _last_call_time = 0$/;"	v	class:ComtradeApi
+_logger	tradedownloader/skeleton.py	/^_logger = logging.getLogger(__name__)$/;"	v
+_max_partners	tradedownloader/getTradeDataFromComtrade.py	/^    _max_partners = 5$/;"	v	class:ComtradeApi
+_max_years	tradedownloader/getTradeDataFromComtrade.py	/^    _max_years = 5$/;"	v	class:ComtradeApi
+_source_folder	tradedownloader/getTradeDataFromComtrade.py	/^    _source_folder = ""$/;"	v	class:ComtradeApi
+_url	tradedownloader/getTradeDataFromComtrade.py	/^    _url = 'http:\/\/comtrade.un.org\/api\/get?'$/;"	v	class:ComtradeApi
+_working_df	tradedownloader/getTradeDataFromComtrade.py	/^    _working_df = []$/;"	v	class:ComtradeApi
+authors	docs/authors.rst	/^.. _authors:$/;"	T
+calls_in_hour	tradedownloader/getTradeDataFromComtrade.py	/^    calls_in_hour = 0$/;"	v	class:ComtradeApi
+changes	docs/Makefile	/^changes:$/;"	t
+changes	docs/changes.rst	/^.. _changes:$/;"	T
+clean	docs/Makefile	/^clean:$/;"	t
+cmd_line	docs/conf.py	/^    cmd_line = cmd_line_template.format(outputdir=output_dir, moduledir=module_dir)$/;"	v
+cmd_line_template	docs/conf.py	/^    cmd_line_template = "sphinx-apidoc -f -o {outputdir} {moduledir}"$/;"	v
+comapi	tests/test.py	/^comapi=getTradeDataFromComtrade.ComtradeApi()$/;"	v
+copyright	docs/conf.py	/^copyright = u'2016, Eoin O'Keeffe'$/;"	v
+ctry_codes	tradedownloader/getTradeDataFromComtrade.py	/^    def ctry_codes(self):$/;"	m	class:ComtradeApi
+devhelp	docs/Makefile	/^devhelp:$/;"	t
+df	tests/test.py	/^df=comapi.getComtradeData()$/;"	v
+dirhtml	docs/Makefile	/^dirhtml:$/;"	t
+doctest	docs/Makefile	/^doctest:$/;"	t
+epub	docs/Makefile	/^epub:$/;"	t
+exclude_patterns	docs/conf.py	/^exclude_patterns = ['_build']$/;"	v
+extensions	docs/conf.py	/^extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'sphinx.ext.todo',$/;"	v
+fib	tradedownloader/skeleton.py	/^def fib(n):$/;"	f
+first_call	tradedownloader/getTradeDataFromComtrade.py	/^    first_call = datetime.datetime.now()$/;"	v	class:ComtradeApi
+getComtradeData	tradedownloader/getTradeDataFromComtrade.py	/^    def getComtradeData(self, comcodes=['1201'], reporter=['all'], partner=['all'],$/;"	m	class:ComtradeApi
+gettext	docs/Makefile	/^gettext:$/;"	t
+help	docs/Makefile	/^help:$/;"	t
+html	docs/Makefile	/^html:$/;"	t
+html_static_path	docs/conf.py	/^html_static_path = ['_static']$/;"	v
+html_theme	docs/conf.py	/^html_theme = 'alabaster'$/;"	v
+htmlhelp	docs/Makefile	/^htmlhelp:$/;"	t
+htmlhelp_basename	docs/conf.py	/^htmlhelp_basename = 'tradedownloader-doc'$/;"	v
+info	docs/Makefile	/^info:$/;"	t
+json	docs/Makefile	/^json:$/;"	t
+latex	docs/Makefile	/^latex:$/;"	t
+latex_documents	docs/conf.py	/^latex_documents = [$/;"	v
+latex_elements	docs/conf.py	/^latex_elements = {$/;"	v
+latexpdf	docs/Makefile	/^latexpdf:$/;"	t
+latexpdfja	docs/Makefile	/^latexpdfja:$/;"	t
+license	docs/license.rst	/^.. _license:$/;"	T
+linkcheck	docs/Makefile	/^linkcheck:$/;"	t
+main	tradedownloader/skeleton.py	/^def main(args):$/;"	f
+man	docs/Makefile	/^man:$/;"	t
+master_doc	docs/conf.py	/^master_doc = 'index'$/;"	v
+max_calls	tradedownloader/getTradeDataFromComtrade.py	/^    max_calls = 95$/;"	v	class:ComtradeApi
+module_dir	docs/conf.py	/^    module_dir = os.path.join(__location__, "..\/tradedownloader")$/;"	v
+np	tradedownloader/getTradeDataFromComtrade.py	/^import numpy as np$/;"	I
+on_rtd	docs/conf.py	/^on_rtd = os.environ.get('READTHEDOCS', None) == 'True'$/;"	v
+output_dir	docs/conf.py	/^    output_dir = os.path.join(__location__, "..\/docs\/api")$/;"	v
+parse_args	tradedownloader/skeleton.py	/^def parse_args(args):$/;"	f
+pd	tests/test_utilities.py	/^import pandas as pd$/;"	I
+pd	tradedownloader/getTradeDataFromComtrade.py	/^import pandas as pd$/;"	I
+pickle	docs/Makefile	/^pickle:$/;"	t
+project	docs/conf.py	/^project = u'tradedownloader'$/;"	v
+pseudoxml	docs/Makefile	/^pseudoxml:$/;"	t
+pygments_style	docs/conf.py	/^pygments_style = 'sphinx'$/;"	v
+qthelp	docs/Makefile	/^qthelp:$/;"	t
+release	docs/conf.py	/^release = ''  # Is set by calling `setup.py docs`$/;"	v
+remove_spurious	tradedownloader/utilities.py	/^def remove_spurious(df=None):$/;"	f
+run	tradedownloader/skeleton.py	/^def run():$/;"	f
+setup_package	setup.py	/^def setup_package():$/;"	f
+singlehtml	docs/Makefile	/^singlehtml:$/;"	t
+source_suffix	docs/conf.py	/^source_suffix = '.rst'$/;"	v
+templates_path	docs/conf.py	/^templates_path = ['_templates']$/;"	v
+testRemoveSpurious	tests/test_utilities.py	/^    def testRemoveSpurious():$/;"	m	class:TestUtilities
+test_fib	tests/test_skeleton.py	/^def test_fib():$/;"	f
+texinfo	docs/Makefile	/^texinfo:$/;"	t
+text	docs/Makefile	/^text:$/;"	t
+tradedownloader	README.rst	/^tradedownloader$/;"	c
+tradedownloader	docs/index.rst	/^tradedownloader$/;"	c
+version	docs/conf.py	/^    from tradedownloader import __version__ as version$/;"	x
+version	docs/conf.py	/^version = ''  # Is set by calling `setup.py docs`$/;"	v
+xml	docs/Makefile	/^xml:$/;"	t

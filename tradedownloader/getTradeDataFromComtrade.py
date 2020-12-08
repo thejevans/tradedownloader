@@ -12,6 +12,7 @@ each commodity code
 """
 import requests
 import pandas as pd
+import numpy as np
 from os.path import join
 import os
 import time
@@ -46,7 +47,7 @@ class ComtradeApi:
         # load the country codes
         self._ctry_codes = pd.read_csv(
             join(fld, ctry_codes_path), keep_default_na=False, encoding="ISO-8859-1")
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['End Valid Year'] > 2012]
         # check to make sure there are correct fields
         if ('ISO2-digit Alpha' not in self._ctry_codes.columns) | \
@@ -63,45 +64,45 @@ class ComtradeApi:
         if "Country Code" in self._ctry_codes.columns:
             self._ctry_codes['ctyCode'] = self._ctry_codes['Country Code']
         # World
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 0]
         # EU-27
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 97]
         # LAIA NES
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 473]
         # Oceania NES
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 527]
         # Europe NES
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 568]
         # Other Africa NES
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 577]
         # Bunkers
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 837]
         # Free Zones
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 838]
         # Special Caegories
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 839]
         # Areas NES
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 899]
         # Neutral Zone
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 536]
         # North America and Central America, nes
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             self._ctry_codes['ctyCode'] != 637]
         # Finally remove where the iso codes are not available
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             pd.isnull(self._ctry_codes['ISO2-digit Alpha']) == False]
-        self._ctry_codes = self._ctry_codes.ix[
+        self._ctry_codes = self._ctry_codes.loc[
             pd.isnull(self._ctry_codes['ISO3-digit Alpha']) == False]
 
         # now the country code alternative names
@@ -123,10 +124,10 @@ class ComtradeApi:
             self._saved_queries = pd.DataFrame({'id': [], 'querystring': [],
                                                 'comcode': [], 'year': [], 'freq': []})
         self._saved_queries.comcode = self._saved_queries.comcode.astype(
-            pd.np.str)
-        self._saved_queries.freq = self._saved_queries.freq.astype(pd.np.str)
+            np.str)
+        self._saved_queries.freq = self._saved_queries.freq.astype(np.str)
         self._saved_queries.querystring = self._saved_queries.querystring.astype(
-            pd.np.str)
+            np.str)
 
     #---------------------------------
     #
@@ -169,7 +170,7 @@ class ComtradeApi:
                 # logging.info(self._saved_queries.dtypes)
                 # logging.info(self._saved_queries.head())
                 for com in comcodes:
-                    if len(self._saved_queries.ix[([float(x)==float(com) for x in self._saved_queries.comcode.values]) &
+                    if len(self._saved_queries.loc[([float(x)==float(com) for x in self._saved_queries.comcode.values]) &
                                                   (self._saved_queries.year == yr) & (self._saved_queries.freq == freq)]) == 0:
                         logging.info(
                             "Can't find %d and %s from local database. These will be retrieved from the Comtrade API." % (yr, com))
@@ -179,7 +180,7 @@ class ComtradeApi:
                 if haveit == True:
                     # print "we have it"
                     for com in comcodes:
-                        fname = self._saved_queries.id.ix[([float(x)==float(com) for x in self._saved_queries.comcode.values]) &
+                        fname = self._saved_queries.id.loc[([float(x)==float(com) for x in self._saved_queries.comcode.values]) &
                                                           (self._saved_queries.year == yr) & 
                                                           (self._saved_queries.freq == freq)].values[0]
                         # only load it if fname if >0
@@ -204,9 +205,9 @@ class ComtradeApi:
 
                 # Now remove years and coms outside the requested
                 # logging.info(df_base.shape)
-                #df_base=df_base.ix[df_base.yr.apply(lambda x: x in years)].copy()
+                #df_base=df_base.loc[df_base.yr.apply(lambda x: x in years)].copy()
                 # logging.info(df_base.shape)
-                #df_base=df_base.ix[df_base.cmdCode.apply(lambda x: x in [int(x) for x in comcodes])].copy()
+                #df_base=df_base.loc[df_base.cmdCode.apply(lambda x: x in [int(x) for x in comcodes])].copy()
                 # logging.info(df_base.shape)
 
             filter_years = years
@@ -218,23 +219,23 @@ class ComtradeApi:
                 df_base.drop_duplicates(inplace=True)
                 # Only return wanted commodity codes
 
-                df_base = df_base.ix[df_base.cmdCode.isin(
+                df_base = df_base.loc[df_base.cmdCode.isin(
                     [int(numeric_string) for numeric_string in comcodes])].copy()
 
                 if freq == 'A':
                     # logging.debug(df_base.head())
-                    df_base = df_base.ix[df_base.period.isin(filter_years)]
+                    df_base = df_base.loc[df_base.period.isin(filter_years)]
                     df_base['date'] = [datetime.datetime(
                         x, 1, 1) for x in df_base.period]
                 if freq == 'M':
                     df_base['year'] = [int(str(x)[:4])
                                        for x in df_base.period.values]
-                    df_base = df_base.ix[df_base.year.isin(filter_years)]
+                    df_base = df_base.loc[df_base.year.isin(filter_years)]
                     df_base['date'] = [datetime.datetime(
                         int(str(x)[:4]), int(str(x)[4:]), 1) for x in df_base.period]
                     df_base.drop('year', inplace=True, axis=1)
                 # logging.debug(filter_years)
-                    # df_base=df_base.ix[df_base.period.isin(years)]
+                    # df_base=df_base.loc[df_base.period.isin(years)]
                 # reset_index
                 df_base.reset_index(drop=True, inplace=True)
                 return df_base
@@ -334,16 +335,16 @@ class ComtradeApi:
             # Only return wanted commodity codes
             if len(df) > 0:
                 # ensure cmdCode is an integer
-                df.cmdCode = df.cmdCode.astype(pd.np.int)
-                df.period = df.period.astype(pd.np.int)
+                df.cmdCode = df.cmdCode.astype(np.int)
+                df.period = df.period.astype(np.int)
                 # print df.head()
                 # print comcodes
                 # print filter_years
                 # print df.dtypes
-                df = df.ix[df.cmdCode.isin(
+                df = df.loc[df.cmdCode.isin(
                     [int(numeric_string) for numeric_string in comcodes])]
                 # if freq=='A':
-                df = df.ix[df.yr.isin(filter_years)]
+                df = df.loc[df.yr.isin(filter_years)]
                 # print df.head()
             return df
         else:
@@ -387,8 +388,8 @@ class ComtradeApi:
             #print("Sleeping for %.0f"%(1000-waiting_time))
             time.sleep(float(1000 - waiting_time) / 1000)
         # print(s)
-        # hitting issues with the certificate validation, so ignoring it for now
-        r = requests.get(r'%s' % (s),verify=False)
+        # certificate validation worked just fine
+        r = requests.get(r'%s' % (s),verify=True)
         self._last_call_time = round(time.time() * 1000.0)
         # print self._last_call_time
         try:
