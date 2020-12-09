@@ -162,7 +162,7 @@ class ComtradeApi:
         # For large queries, it's possible we've stored the results
         if reporter[0] == "all" and partner[0] == "all":
             # Check if query has already been done
-            df_base = []
+            df_base = pd.DataFrame()
             retain = []
             load_files = []
             for yr in years:
